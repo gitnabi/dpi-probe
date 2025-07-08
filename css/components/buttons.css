@@ -1,0 +1,137 @@
+/* Общие стили для кнопок */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 20px;
+    border: none;
+    border-radius: var(--radius-md);
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    text-decoration: none;
+    white-space: nowrap;
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--accent-primary), #2ea043);
+    color: white;
+    box-shadow: var(--shadow-sm);
+}
+
+.btn-primary:hover:not(:disabled) {
+    background: linear-gradient(135deg, #2ea043, var(--accent-primary));
+    box-shadow: var(--shadow-md);
+    transform: translateY(-1px);
+}
+
+.btn-secondary {
+    background: var(--bg-tertiary);
+    color: var(--text-primary);
+    border: 1px solid var(--border-primary);
+}
+
+.btn-secondary:hover:not(:disabled) {
+    background: var(--bg-hover);
+    border-color: var(--border-accent);
+    transform: translateY(-1px);
+}
+
+.btn-danger {
+    background: var(--bg-tertiary);
+    color: var(--text-primary);
+    border: 1px solid var(--border-primary);
+}
+
+.btn-danger:hover:not(:disabled) {
+    background: var(--bg-hover);
+    border-color: var(--border-accent);
+    transform: translateY(-1px);
+}
+
+/* Кнопка проверки в строке */
+.btn-check-row {
+    padding: 6px 12px;
+    font-size: 12px;
+    background: var(--accent-secondary);
+    color: white;
+    border: none;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.btn-check-row:hover:not(:disabled) {
+    background: #1f6feb;
+    transform: scale(1.05);
+}
+
+.btn-check-row:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Кнопка удаления в строке */
+.btn-delete-row {
+    padding: 4px 6px;
+    font-size: 12px;
+    background: var(--bg-hover);
+    color: var(--text-muted);
+    border: 1px solid var(--border-secondary);
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    min-width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    flex-shrink: 0;
+}
+
+.btn-delete-row:hover {
+    background: var(--text-error);
+    color: white;
+    border-color: var(--text-error);
+    transform: scale(1.1);
+}
+
+.btn-delete-row:active {
+    transform: scale(0.95);
+}
+
+/* Кнопка подробностей в строке */
+.btn-details {
+    padding: 6px 12px;
+    font-size: 12px;
+    background: var(--accent-tertiary);
+    color: white;
+    border: none;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    white-space: nowrap;
+}
+
+.btn-details:hover:not(:disabled) {
+    background: #7c3aed;
+    transform: scale(1.05);
+}
+
+.btn-details:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    background: var(--bg-hover);
+    color: var(--text-muted);
+}

@@ -1,0 +1,20 @@
+CloudFlare,https://one.one.one.one,🌐 Anycast
+CloudFlare,https://www.cloudflare.com/cdn-cgi/trace,🌐 Anycast
+CloudFlare,https://speed.cloudflare.com/,🌐 Anycast
+CloudFlare,https://malware.testcategory.com,🌐 Anycast
+CloudFlare,https://nudity.testcategory.com,🌐 Anycast
+Gcore,https://speedtest.gcore.com/,🌐 Anycast
+BunnyCDN,https://tools.bunny.net/http-test,🌐 Anycast
+BunnyCDN,https://tools.bunny.net/latency-test,🌐 Anycast
+Fastly,https://kb-speedtest.global.ssl.fastly.net,🌐 Anycast
+AWS EC2,https://ec2.eu-north-1.amazonaws.com,🇸🇪 Stockholm
+Vultr,https://fra-de-ping.vultr.com,🇩🇪 Frankfurt
+Linode,https://speedtest.frankfurt.linode.com,🇩🇪 Frankfurt
+Hetzner Cloud,https://fsn1-speed.hetzner.com,🇩🇪 Falkenstein
+OVHcloud,https://rbx.proof.ovh.net,🇫🇷 Roubaix
+OVHcloud,https://gra.proof.ovh.net,🇫🇷 Gravelines
+IONOS,212.227.172.1,🇩🇪 Karlsruhe/Frankfurt
+Google DNS,8.8.8.8,🌐 Anycast
+Cloudflare DNS,1.1.1.1,🌐 Anycast
+Quad9 DNS,9.9.9.9,🌐 Anycast
+OpenDNS,208.67.222.222,🌐 Anycast

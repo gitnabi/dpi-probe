@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DPI Probe - Тестирование</title>
+    <link rel="shortcut icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components/header.css">
+    <link rel="stylesheet" href="css/components/buttons.css">
+    <link rel="stylesheet" href="css/components/inputs.css">
+    <link rel="stylesheet" href="css/components/progress.css">
+    <link rel="stylesheet" href="css/components/table.css">
+    <link rel="stylesheet" href="css/components/modal.css">
+    <link rel="stylesheet" href="css/components/details.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Заголовок приложения -->
+        <header class="app-header">
+            <!-- Информер о геолокации -->
+            <div class="user-location" id="userLocation">
+                <span>Определение локации...</span>
+            </div>
+            <h1 class="app-title">DPI Probe</h1>
+            <div class="header-controls">
+                <!-- Информер об ограничениях (справа) -->
+                <div class="info-widget" id="infoWidget" data-i18n-title="infoWidgetTitle">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="12" y1="16" x2="12" y2="12"></line>
+                        <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                    </svg>
+                </div>
+                <!-- Переключатель языка -->
+                <div class="lang-switcher" id="langSwitcher">
+                    <button class="lang-btn active" data-lang="ru">RU</button>
+                    <button class="lang-btn" data-lang="en">EN</button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Панель управления -->
+        <div class="control-panel">
+            <div class="control-group">
+                <button class="btn btn-primary" id="runAllTestsBtn" data-i18n="runAllTests">
+                    Запустить все тесты
+                </button>
+                <button class="btn btn-danger" id="clearCacheBtn" data-i18n="clearCache">
+                    Очистить кэш
+                </button>
+                <div class="progress-indicator" id="progressIndicator" style="display: none;">
+                    <div class="progress-bar">
+                        <div class="progress-fill"></div>
+                    </div>
+                    <span class="progress-text">Выполнение тестов...</span>
+                </div>
+            </div>
+            
+            <div class="control-group">
+                <div class="url-input-group">
+                    <input
+                        type="text"
+                        id="urlInput"
+                        class="url-input"
+                        placeholder="Введите URL или IP"
+                        data-i18n="urlInputPlaceholder"
+                        autocomplete="off"
+                    >
+                    <button class="btn btn-secondary" id="checkUrlBtn" data-i18n="checkUrl">
+                        Проверить
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Контейнер для результатов проверки URL -->
+        <div class="url-results-container" id="urlResultsContainer"></div>
+
+        <!-- Контейнер таблицы -->
+        <div class="table-container">
+            <div class="table-wrapper">
+                <table class="data-table" id="dataTable">
+                    <thead class="table-header">
+                        <th class="col-number" data-i18n="table.colNumber">№</th>
+                            <th class="col-actions" data-i18n="table.colActions">Действия</th>
+                            <th class="col-name sticky-left" data-i18n="table.colName">Название</th>
+                            <th class="col-target" data-i18n="table.colTarget">Цель</th>
+                            <th class="col-location" data-i18n="table.colLocation">Локация</th>
+                            <th class="col-response-time" data-i18n="table.colHttp">HTTP</th>
+                            <th class="col-ssl" data-i18n="table.colSsl">SSL</th>
+                            <th class="col-dns" data-i18n="table.colDns">DNS</th>
+                            <th class="col-details" data-i18n="table.colDetails">Подробности</th>
+                            <th class="col-notes sticky-right" data-i18n="table.colVerdict">Вердикт</th>
+                        </tr>
+                    </thead>
+                    <tbody class="table-body" id="tableBody">
+                        <!-- Строки будут добавлены через JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Модальное окно для деталей -->
+        <div class="modal-overlay" id="modalOverlay" style="display: none;">
+            <div class="modal">
+                <div class="modal-header">
+                    <h3 class="modal-title" data-i18n="modal.title">Детали проверки</h3>
+                    <button class="modal-close" id="modalClose">&times;</button>
+                </div>
+                <div class="modal-body" id="modalBody">
+                    <!-- Содержимое будет добавлено через JavaScript -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- I18n -->
+    <script src="js/i18n/i18n.js"></script>
+
+    <!-- Утилитарные модули -->
+    <script src="js/utils/dom.js"></script>
+    <script src="js/utils/url.js"></script>
+    <script src="js/utils/format.js"></script>
+    <script src="js/utils/state.js"></script>
+    <script src="js/utils/animation.js"></script>
+    <script src="js/utils/notification.js"></script>
+    <script src="js/utils/events.js"></script>
+    <script src="js/utils/network.js"></script>
+    
+    <!-- Тестовые модули -->
+    <script src="js/tests/test-runner.js"></script>
+    
+    <!-- Компоненты таблицы -->
+    <script src="js/components/data-manager.js"></script>
+    <script src="js/components/table-renderer.js"></script>
+    <script src="js/components/table-events.js"></script>
+    <script src="js/components/row-checker.js"></script>
+    <script src="js/components/details-renderer.js"></script>
+    <script src="js/components/details-viewer.js"></script>
+    <script src="js/components/data-table.js"></script>
+    
+    <!-- Core модули -->
+    <script src="js/core/app-initializer.js"></script>
+    <script src="js/core/event-manager.js"></script>
+    <script src="js/core/test-controller.js"></script>
+    <script src="js/core/result-viewer.js"></script>
+    <script src="js/core/modal-manager.js"></script>
+    <script src="js/core/ui-controller.js"></script>
+    <script src="js/core/app.js"></script>
+    
+    <!-- Инициализация приложения -->
+    <script>
+        // Инициализация приложения при загрузке страницы
+        if (typeof window.DPIProbeApp !== 'undefined') {
+            window.app = new DPIProbeApp();
+        } else {
+            console.error('DPI Probe: Core модули не найдены');
+        }
+    </script>
+</body>
+</html>

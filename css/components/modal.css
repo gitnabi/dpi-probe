@@ -1,0 +1,157 @@
+/* Модальное окно */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    backdrop-filter: blur(4px);
+}
+
+.modal {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-primary);
+    border-radius: var(--radius-lg);
+    max-width: 800px;
+    width: 90%;
+    max-height: 80vh;
+    display: flex; /* Добавляем flex-контейнер */
+    flex-direction: column; /* Направление колонки */
+    box-shadow: var(--shadow-lg);
+    animation: modalSlideIn 0.3s ease;
+}
+
+@keyframes modalSlideIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9) translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid var(--border-primary);
+    flex-shrink: 0; /* Заголовок не должен сжиматься */
+}
+
+.modal-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.modal-close {
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    font-size: 24px;
+    cursor: pointer;
+    padding: 4px;
+    border-radius: var(--radius-sm);
+    transition: all var(--transition-fast);
+}
+
+.modal-close:hover {
+    background: var(--bg-hover);
+    color: var(--text-primary);
+}
+
+.modal-body {
+    overflow-y: auto; /* Добавляем прокрутку для тела модального окна */
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--text-secondary);
+}
+
+/* Стили для контента информационного модального окна */
+.info-modal-content {
+    padding: 20px;
+}
+
+.info-modal-content h4 {
+    font-size: 16px;
+    color: var(--text-primary);
+    margin-top: 16px;
+    margin-bottom: 6px;
+}
+
+.info-modal-content p {
+    margin-bottom: 12px;
+}
+
+/* Стили для модального окна подтверждения */
+.confirm-modal-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 32px;
+    text-align: center;
+}
+
+.confirm-modal-icon {
+    color: var(--text-warning);
+    margin-bottom: 16px;
+}
+
+.confirm-modal-icon svg {
+    width: 48px;
+    height: 48px;
+}
+
+.confirm-modal-title {
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 6px;
+}
+
+.confirm-modal-text {
+    font-size: 13px;
+    color: var(--text-secondary);
+    margin-bottom: 24px;
+    max-width: 320px;
+    line-height: 1.5;
+}
+
+.confirm-modal-actions {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+
+/* Стили для модального окна с информацией */
+.info-modal-content h4 {
+    font-size: 16px;
+    color: var(--text-accent);
+    margin-top: 16px;
+    margin-bottom: 8px;
+    border-bottom: 1px solid var(--border-primary);
+    padding-bottom: 4px;
+}
+
+.info-modal-content p {
+    margin-bottom: 12px;
+    color: var(--text-secondary);
+}
+
+.info-modal-content strong {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+/* Адаптация размера модального окна для подтверждения */
+.modal.confirm-modal {
+    max-width: 420px; /* Делаем окно подтверждения более компактным */
+}

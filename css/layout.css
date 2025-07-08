@@ -1,0 +1,49 @@
+/* Контейнер приложения */
+.app-container {
+    min-height: 100vh;
+    padding: 16px;
+    max-width: 100%;
+}
+
+/* Панель управления */
+.control-panel {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+    padding: 12px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-primary);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+}
+
+.control-group {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+/* Контейнер результатов URL */
+.url-results-container {
+    margin-bottom: 24px;
+}
+
+/* Адаптивность */
+@media (max-width: 850px) {
+    .app-container {
+        padding: 16px;
+    }
+    
+    .control-panel {
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: center;
+    }
+    
+    .control-group {
+        justify-content: center;
+    }
+}

@@ -1,0 +1,322 @@
+/* Контейнер для контента "Подробности" в модальном окне */
+.details-modal-content {
+    padding: 20px;
+}
+
+/* Карточка с результатами для одиночной проверки URL */
+.url-result-card {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-primary);
+    border-radius: var(--radius-lg);
+    padding: 20px;
+    margin-bottom: 16px;
+    position: relative;
+    box-shadow: var(--shadow-sm);
+    animation: slideIn 0.3s ease;
+}
+
+.url-result-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.url-result-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.url-result-close {
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    font-size: 20px;
+    cursor: pointer;
+    padding: 4px;
+    border-radius: var(--radius-sm);
+    transition: all var(--transition-fast);
+}
+
+.url-result-close:hover {
+    background: var(--bg-hover);
+    color: var(--text-primary);
+}
+
+.url-result-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+}
+
+.url-result-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid var(--border-secondary);
+}
+
+/* Стили для выделенного блока вердикта */
+.verdict-highlight-card {
+    grid-column: 1 / -1;
+    background: var(--bg-tertiary);
+    border-radius: var(--radius-md);
+    padding: 16px;
+    border-left: 4px solid transparent;
+}
+
+.verdict-highlight-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+}
+
+.verdict-highlight-icon {
+    font-size: 20px;
+}
+
+.verdict-highlight-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.verdict-highlight-text {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-secondary);
+    padding-left: 30px;
+}
+
+/* Стили для детальной информации (используются и в карточке, и в модальном) */
+.test-details-grid {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 12px;
+}
+
+.test-detail-card {
+    background: var(--bg-tertiary);
+    border-radius: var(--radius-md);
+    padding: 12px;
+    border-left: 3px solid transparent;
+    transition: all var(--transition-fast);
+}
+
+.status-border-success { border-left-color: var(--text-success); }
+.status-border-warning { border-left-color: var(--text-warning); }
+.status-border-error { border-left-color: var(--text-error); }
+
+.test-detail-card-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+    width: 100%;
+}
+
+.dns-title-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.dns-resolve-time {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--text-secondary);
+}
+
+.test-detail-card-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.test-detail-card-body {
+    font-size: 13px;
+}
+
+.test-detail-message {
+    margin-bottom: 8px;
+    font-size: 12px;
+    color: var(--text-secondary);
+    font-style: italic;
+}
+
+.blackhole-warning {
+    font-weight: 600;
+    color: var(--text-warning);
+    font-style: normal;
+}
+
+.test-detail-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4px 0;
+}
+
+.test-detail-item strong {
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+.test-detail-item span {
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+.test-details-footer {
+    margin-top: 12px;
+    padding-top: 8px;
+    border-top: 1px solid var(--border-secondary);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.total-execution-time {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-secondary);
+}
+
+.total-execution-time span {
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.last-checked-info {
+    font-size: 12px;
+    color: var(--text-muted);
+    font-style: italic;
+}
+
+.dns-result {
+    white-space: normal;
+    word-break: break-all;
+    text-align: right;
+}
+
+/* Стили для широкой карточки DNS */
+.dns-domain-card {
+    grid-column: 1 / -1; /* Занимает всю ширину грида */
+    min-width: 100%;
+    margin-top: 12px;
+}
+
+.dns-servers-container {
+    margin-top: 8px;
+    padding-top: 8px;
+    border-top: 1px solid var(--border-secondary);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.dns-server-result-wrapper {
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border-primary);
+    border-radius: var(--radius-md);
+    padding: 10px;
+    transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.dns-server-result-wrapper:hover {
+    border-color: var(--text-accent);
+    box-shadow: var(--shadow-sm);
+}
+
+.dns-server-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    margin-bottom: 8px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--border-secondary);
+}
+
+.dns-server-name {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.dns-server-name strong {
+    font-weight: 600;
+}
+
+.dns-server-resolve-time {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--text-secondary);
+}
+
+.dns-server-ips {
+    font-size: 12px;
+    color: var(--text-secondary);
+}
+
+.no-records-message {
+    text-align: center;
+    color: var(--text-muted);
+    padding: 8px;
+}
+
+.ip-ptr-header {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin-bottom: 4px;
+    padding: 0 4px;
+}
+
+.ip-address-header {
+    flex-basis: 30%;
+}
+
+.ptr-record-header {
+    flex-basis: 70%;
+    text-align: right;
+}
+
+.ip-ptr-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+    margin-top: 4px;
+    padding: 2px 4px;
+}
+
+.ip-address {
+    font-weight: 500;
+    color: var(--text-primary);
+    flex-basis: 30%;
+}
+
+.ptr-record {
+    font-style: italic;
+    color: var(--text-muted);
+    text-align: right;
+    word-break: break-all;
+    flex-basis: 70%;
+}
+
+.ptr-time {
+    margin-left: 8px;
+    font-size: 11px;
+    color: var(--text-muted);
+    font-weight: 500;
+    font-style: normal;
+}
+

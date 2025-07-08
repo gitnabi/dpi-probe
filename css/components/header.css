@@ -1,0 +1,141 @@
+/* Заголовок приложения */
+.app-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+    padding: 8px 0;
+}
+
+.header-controls {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.app-title {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--text-primary);
+    background: linear-gradient(135deg, var(--text-accent), var(--accent-tertiary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    /* Центрируем заголовок абсолютно, чтобы он не смещался из-за боковых блоков */
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Переключатель языка */
+.lang-switcher {
+    display: flex;
+    border: 1px solid var(--border-primary);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    background: var(--bg-secondary);
+}
+
+.lang-btn {
+    padding: 8px 12px;
+    border: none;
+    background: transparent;
+    color: var(--text-secondary);
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.lang-btn:hover:not(.active) {
+    background: var(--bg-hover);
+    color: var(--text-primary);
+}
+
+.lang-btn.active {
+    background: var(--accent-secondary);
+    color: white;
+    cursor: default;
+}
+
+/* Виджет геолокации */
+.user-location {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-primary);
+    border-radius: var(--radius-md);
+    padding: 8px 12px;
+    font-size: 12px;
+    color: var(--text-secondary);
+    max-width: 280px;
+    transition: all var(--transition-fast);
+    flex-shrink: 1; /* Позволяем сжиматься при необходимости */
+    min-width: 0; /* Для корректной работы flex-shrink */
+}
+
+.location-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 4px;
+}
+
+.location-item:last-child {
+    margin-bottom: 0;
+}
+
+.location-item svg {
+    width: 14px;
+    height: 14px;
+    margin-right: 8px;
+    stroke-width: 2;
+    color: var(--text-accent);
+    flex-shrink: 0;
+}
+
+.location-item span {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.location-ip {
+    font-size: 11px;
+    color: var(--text-muted);
+    margin-top: 6px;
+    border-top: 1px solid var(--border-primary);
+    padding-top: 5px;
+    text-align: center;
+}
+
+/* Информер */
+.info-widget {
+    width: 32px;
+    height: 32px;
+    background: var(--bg-secondary);
+    color: var(--text-secondary);
+    border: 1px solid var(--border-primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    z-index: 10;
+    flex-shrink: 0; /* Запрещаем сжиматься */
+}
+
+.info-widget svg {
+    width: 18px;
+    height: 18px;
+}
+
+.info-widget:hover {
+    border-color: var(--text-accent);
+    color: var(--text-accent);
+    transform: scale(1.1);
+}
+
+@media (max-width: 850px) {
+    .app-title {
+        font-size: 24px;
+    }
+}

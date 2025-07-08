@@ -1,0 +1,207 @@
+{
+    "appTitle": "DPI Probe",
+    "runAllTests": "Run all tests",
+    "clearCache": "🗑️ Clear cache",
+    "urlInputPlaceholder": "Enter URL or IP",
+    "checkUrl": "🔍 Check",
+    "locationInProgress": "Detecting location...",
+    "locationError": "Error fetching data",
+    "locationUnavailable": "Could not determine location",
+    "infoWidgetTitle": "About testing limitations",
+    "table": {
+        "colNumber": "#",
+        "colActions": "Actions",
+        "colName": "Name",
+        "colTarget": "Target",
+        "colLocation": "Location",
+        "colHttp": "HTTP",
+        "colSsl": "SSL",
+        "colDns": "DNS",
+        "colDetails": "Details",
+        "colVerdict": "Verdict"
+    },
+    "actions": {
+        "check": "Check",
+        "checking": "Checking...",
+        "details": "Details",
+        "noData": "No data",
+        "delete": "Delete row"
+    },
+    "verdicts": {
+        "dpiSsl": "SSL spoofing (DPI)",
+        "ipBlock": "Blocked by IP",
+        "dnsBlock": "DNS blocking",
+        "dnsSpoofing": "DNS spoofing",
+        "ipv6StatusUnclear": "IPv6: Status unclear (no HTTP response)",
+        "noCensorship": "Accessible",
+        "blackhole": "Black-hole block",
+        "ipSniBlock": "Blocked by IP / SNI",
+        "httpTlsBlock": "Blocked by Deep Packet Inspection (DPI)"
+    },
+    "modal": {
+        "title": "Check details"
+    },
+    "notifications": {
+        "rowDeleted": "Row '{name}' has been deleted",
+        "confirmDelete": "Are you sure you want to delete '{name}'?",
+        "confirmClearCacheTitle": "Clear cache?",
+        "confirmClearCacheMessage": "All saved data and test results will be deleted. The table will be rebuilt with the original data.",
+        "confirmDeleteRowTitle": "Delete '{name}'?",
+        "confirmDeleteRowMessage": "This action cannot be undone.",
+        "checkError": "Error checking {name}",
+        "testsRunning": "Tests are already running",
+        "startingMultipleChecks": "Starting checks for {count} sites...",
+        "allChecksCompleted": "All checks completed!",
+        "progressStatus": "Completed {completed} of {total} checks",
+        "testsError": "Error during tests execution",
+        "urlRequired": "URL is not specified",
+        "invalidUrl": "Invalid URL",
+        "addedOn": "Added on {date}",
+        "addedToTable": "\"{name}\" has been added to the table",
+        "cacheCleared": "Cache cleared, table rebuilt with initial data",
+        "cacheClearError": "Error clearing cache",
+        "testsStopped": "Testing stopped",
+        "enterUrl": "Please enter a URL to check",
+        "appRestarted": "Application restarted",
+        "appRestartError": "Error restarting application",
+        "csvLoadError": "Critical Error: Failed to load or process targets_to_check.csv file.",
+        "csvLoadErrorGeneral": "Error loading data. Functionality is limited."
+    },
+    "detailsCard": {
+        "noDetails": "Test details are missing or in an incorrect format.",
+        "lastChecked": "Last checked:",
+        "executionTime": "Execution:",
+        "totalExecutionTime": "Total execution time",
+        "http": {
+            "statusCode": "Status code:",
+            "responseType": "Response Type:",
+            "errors": {
+                "AbortError": "Timeout",
+                "TypeError": "Connection reset",
+                "default": "Network error"
+            },
+            "success": "Connection established successfully.",
+            "error": "Failed to establish connection.",
+            "requestDetails": {
+                "method": "Method:"
+            }
+        },
+        "ssl": {
+            "protocol": "Protocol:",
+            "blackholeWarning": "Anomalously long execution. Possible 'black-hole' block.",
+            "errors": {
+                "TypeError": "Connection reset",
+                "default": "Certificate error"
+            },
+            "success": "SSL/TLS connection is valid.",
+            "error": "SSL/TLS certificate validation failed.",
+            "warning": "No SSL/TLS connection."
+        },
+        "dns": {
+            "domain": "Domain:",
+            "ip": "IP:",
+            "server": "Server:",
+            "success": "DNS resolved successfully.",
+            "error": "Failed to resolve DNS.",
+            "successWithTime": "DNS queries finished in {time}",
+            "errorWithTime": "DNS queries failed in {time}",
+            "spoofingDetected": "DNS spoofing detected!",
+            "spoofingDetectedWithTime": "DNS spoofing detected! (queries finished in {time})",
+            "noRecords": "No records found",
+            "noPtr": "No PTR record",
+            "ipAddress": "IP Address",
+            "ipAddressWithTime": "IP Address ({time})",
+            "ptrRecord": "PTR Record",
+            "dnsServer": "DNS Server:",
+            "ptrQueryName": "PTR Query Name:"
+        }
+    },
+    "timeUnits": {
+        "ms": "ms",
+        "s": "s",
+        "min": "min"
+    },
+    "location": {
+        "unavailable": "Could not determine location",
+        "errorFetching": "Error fetching data",
+        "ip": "IP:"
+    },
+    "appStatus": {
+        "unavailable": "Unavailable",
+        "functionUnavailable": "Function unavailable due to data loading error",
+        "inputUnavailable": "Unavailable due to data loading error",
+        "loadingError": "Data Loading Error",
+        "criticalError": "Critical Error",
+        "checkFileReload": "Check file existence and reload the page",
+        "howToFix": "How to fix this:",
+        "csvExists": "Ensure that the `targets_to_check.csv` file exists in the project root folder.",
+        "csvFormat": "Check that the file is not empty and contains data in CSV format.",
+        "csvRowFormat": "Each row must contain three values: Name,URL,Location.",
+        "csvExample": "For example: Google,https://google.com,USA",
+        "appBlocked": "Application blocked due to critical error:"
+    },
+    "buttons": {
+        "running": "Running...",
+        "check": "Check",
+        "checking": "Checking...",
+        "add": "Add to table"
+    },
+    "urlInput": {
+        "ipv4": "IPv4 address",
+        "ipv6": "IPv6 address",
+        "domain": "Domain",
+        "invalidUrl": "Invalid URL or IP address"
+    },
+    "modalContent": {
+        "testDetailsTitle": "Check details for:",
+        "generalInfo": "General Information",
+        "url": "URL:",
+        "domain": "Domain:",
+        "startTime": "Start Time:",
+        "totalTime": "Total Time:",
+        "status": "Status:",
+        "executionTime": "Execution Time:",
+        "confirm": "Confirm",
+        "cancel": "Cancel",
+        "infoModalTitle": "About Testing Specifics",
+        "infoModalP1": "<strong>DPI Probe</strong> performs all tests directly from your browser. This imposes certain technical limitations and affects how results should be interpreted.",
+        "infoModalSSLTitle": "SSL/TLS Test",
+        "infoModalSSLText": "The browser does not allow access to full SSL certificate details (like the issuer). The test can only confirm that a TLS connection was established. If a connection fails for an HTTPS resource, it highly likely indicates a certificate issue (e.g., a substitution), which is a sign of DPI.",
+        "infoModalDNSTitle": "DNS Test",
+        "infoModalDNSText": "To resolve IP addresses, we use public DNS-over-HTTPS (DoH) servers (Cloudflare, Google). This allows us to bypass the system cache and detect DNS spoofing by comparing responses from independent resolvers.",
+        "verdictInfoTitle": "How to Interpret Verdicts"
+    },
+    "verdictInfo": {
+        "noCensorship": "All tests (DNS, SSL, HTTP) passed successfully. The site is accessible.",
+        "ipSniBlock": "The site uses <strong>HTTPS</strong>. The DNS query was successful, but the <strong>SSL connection was reset</strong> (certificate error). This indicates a block at the IP address or Server Name Indication (SNI) level during the earliest stage of the TLS handshake.",
+        "httpTlsBlock": "The site uses <strong>HTTPS</strong>. The DNS query and the <strong>SSL connection were successful</strong>, but the subsequent HTTP request within the secure channel was blocked. This is a classic sign of DPI, which analyzes and blocks traffic based on its content.",
+        "dnsSpoofing": "DNS responses from independent servers point to different IP addresses, or the PTR records do not match the domain. This is a clear sign that your DNS traffic is being intercepted and modified.",
+        "blackhole": "The request to the server did not complete within the allotted time (15 seconds). This is a blocking method where traffic to the blocked resource is simply dropped without any response.",
+        "dpiSsl": "The DNS query was successful, and a connection was established, but the SSL certificate is not trusted. This indicates a Man-in-the-Middle (MITM) attack, often used by DPI to analyze HTTPS traffic.",
+        "ipBlock": "The site uses <strong>HTTP (unencrypted)</strong>. The DNS query was successful, but a connection to the resulting IP address could not be established. This is a typical blocking scenario for sites that do not use SSL/TLS.",
+        "dnsBlock": "Failed to obtain an IP address for the domain from any of the independent DNS servers. This could mean the domain does not exist or its DNS records are being blocked.",
+        "ipv6StatusUnclear": "Many IPv6 addresses do not respond to HTTP requests by default. This status means we cannot make a definitive conclusion about accessibility or blocking."
+    },
+    "testStatus": {
+        "success": "✓ Success",
+        "warning": "⚠ Warning",
+        "error": "✗ Error",
+        "running": "⏳ Running",
+        "unknown": "Unknown"
+    },
+    "detailKeys": {
+        "message": "Message",
+        "responseTime": "Response Time",
+        "statusCode": "Response Code",
+        "resolveTime": "DNS Time",
+        "ipAddresses": "IP Addresses",
+        "protocol": "Protocol",
+        "expiryDays": "Days to Expiry",
+        "securityScore": "Security Score",
+        "serverInfo": "Server",
+        "firstByteTime": "First Byte Time",
+        "loadTime": "Load Time",
+        "pageSize": "Page Size",
+        "grade": "Grade"
+    }
+}

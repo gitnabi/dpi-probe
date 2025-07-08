@@ -1,0 +1,32 @@
+/* Индикатор прогресса */
+.progress-indicator {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.progress-bar {
+    width: 200px;
+    height: 4px;
+    background: var(--bg-tertiary);
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--accent-secondary), var(--accent-tertiary));
+    width: 0%;
+    transition: width var(--transition-normal);
+    animation: progress-shimmer 2s infinite;
+}
+
+@keyframes progress-shimmer {
+    0% { background-position: -200px 0; }
+    100% { background-position: 200px 0; }
+}
+
+.progress-text {
+    color: var(--text-secondary);
+    font-size: 13px;
+}

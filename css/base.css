@@ -1,0 +1,123 @@
+/* Сброс стилей и базовые настройки */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Цветовая палитра темной темы */
+    --bg-primary: #0d1117;
+    --bg-secondary: #161b22;
+    --bg-tertiary: #21262d;
+    --bg-hover: #30363d;
+    --bg-active: #282e33;
+    
+    --border-primary: #30363d;
+    --border-secondary: #21262d;
+    --border-accent: #f78166;
+    
+    --text-primary: #f0f6fc;
+    --text-secondary: #8b949e;
+    --text-muted: #656d76;
+    --text-accent: #58a6ff;
+    --text-success: #3fb950;
+    --text-warning: #d29922;
+    --text-error: #f85149;
+    
+    --accent-primary: #238636;
+    --accent-secondary: #1f6feb;
+    --accent-tertiary: #8b5cf6;
+    
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
+    --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.5);
+    
+    --radius-sm: 6px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    
+    --transition-fast: 0.15s ease;
+    --transition-normal: 0.25s ease;
+    --transition-slow: 0.35s ease;
+}
+
+/* Базовые стили */
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.6;
+    font-size: 14px;
+    overflow-x: hidden;
+}
+
+/* Скроллбары */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-tertiary);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--border-primary);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--text-muted);
+}
+
+/* Анимации */
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Утилитарные классы */
+.text-muted { color: var(--text-muted); }
+.text-success { color: var(--text-success); }
+.text-warning { color: var(--text-warning); }
+.text-error { color: var(--text-error); }
+
+.hidden { display: none !important; }
+.fade-in { animation: fadeIn 0.3s ease; }
+
+.loading-spinner {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border: 2px solid var(--border-primary);
+    border-radius: 50%;
+    border-top-color: var(--text-accent);
+    animation: spin 1s ease-in-out infinite;
+}
+
+.status-icon {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.status-success { color: var(--text-success); }
+.status-warning { color: var(--text-warning); }
+.status-error { color: var(--text-error); }

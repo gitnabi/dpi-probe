@@ -1,0 +1,130 @@
+/* Контейнер таблицы */
+.table-container {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-primary);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+}
+
+.table-wrapper {
+    overflow: auto;
+    max-height: 70vh;
+    position: relative;
+}
+
+/* Таблица */
+.data-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    font-size: 13px;
+    min-width: 1370px;
+}
+
+.table-header {
+    position: sticky;
+    top: 0;
+    z-index: 12;
+    background: var(--bg-tertiary);
+}
+
+.table-header th {
+    padding: 16px 12px;
+    text-align: left;
+    font-weight: 600;
+    color: var(--text-primary);
+    border-bottom: 2px solid var(--border-primary);
+    border-right: 1px solid var(--border-secondary);
+    background: var(--bg-tertiary);
+    white-space: nowrap;
+}
+
+.table-header th:last-child {
+    border-right: none;
+}
+
+/* Закрепленные столбцы */
+.sticky-left {
+    position: sticky;
+    left: 0;
+    z-index: 11;
+    box-shadow: 2px 0 4px rgba(0, 0, 0, 0.1);
+}
+
+.sticky-right {
+    position: sticky;
+    right: 0;
+    z-index: 11;
+    box-shadow: -2px 0 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Закрепленные столбцы в заголовке */
+.table-header .sticky-left,
+.table-header .sticky-right {
+    background: var(--bg-tertiary) !important;
+    z-index: 13;
+}
+
+/* Закрепленные столбцы в теле таблицы */
+.table-body .sticky-left,
+.table-body .sticky-right {
+    background: var(--bg-secondary) !important;
+}
+
+/* Ячейки таблицы */
+.table-body td {
+    padding: 12px;
+    border-bottom: 1px solid var(--border-secondary);
+    border-right: 1px solid var(--border-secondary);
+    background: var(--bg-secondary);
+    vertical-align: middle;
+}
+
+.table-body td:last-child {
+    border-right: none;
+}
+
+.table-body tr:hover td {
+    background: var(--bg-hover);
+}
+
+.table-body tr:hover .sticky-left,
+.table-body tr:hover .sticky-right {
+    background: var(--bg-hover) !important;
+}
+
+/* Размеры столбцов */
+.col-number { width: 60px; min-width: 60px; }
+.col-actions { width: 130px; min-width: 130px; }
+.col-name { width: 170px; min-width: 130px; }
+.col-target { width: 240px; min-width: 200px; }
+.col-location { width: 150px; min-width: 120px; }
+.col-response-time { width: 120px; min-width: 100px; }
+.col-ssl { width: 80px; min-width: 60px; }
+.col-dns { width: 100px; min-width: 80px; }
+.col-details { width: 120px; min-width: 100px; }
+
+/* Контейнер действий в строке */
+.row-actions {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+}
+
+.verdict-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+.verdict-text {
+    flex-grow: 1;
+}
+
+@media (max-width: 850px) {
+    .table-wrapper {
+        max-height: 60vh;
+    }
+}
